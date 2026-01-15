@@ -136,6 +136,20 @@ Se eligió NestJS para el backend por su modularidad, que permite organizar func
 Al estar basado en TypeScript, ofrece tipado fuerte, autocompletado y detección de errores. Su inyección de dependencias permite componentes desacoplados y testables, y su soporte nativo de WebSocket facilita la comunicación en tiempo real. Además, cuenta con un ecosistema robusto para integración con servicios externos y herramientas de validación y middleware que mejoran la calidad del código.
 
 
+## 🤖 Uso de Herramientas de IA
+
+Utilicé inteligencia artificial como herramienta de apoyo en varios aspectos del proyecto, siempre con revisión crítica del código generado. Modelos utilizados: Claude y ChatGPT, aprovechando las versiones Pro gratuitas que ofrecen las plataformas, así como sus versiones estándar sin costo.
+
+- **Script de carga de datos**: Para generar los 10,000 registros de ventas y estructurar la inserción en BigQuery
+- **BigQuery**: Para entender particionamiento, clustering y consultas optimizadas
+- **Vue 3**: Para adaptarme al desarrollo en Vue viniendo de experiencia en React, usando IA como guía para entender patrones y buenas prácticas en la estructura de la aplicación.
+- **Optimización de código**: Para mejorar rendimiento y legibilidad donde fue posible
+- **README**: Para estructurar y pulir la documentación, partiendo de mis ideas propias
+
+En todos los casos, el código fue revisado, validado y adaptado a los requerimientos específicos del proyecto. No fue copiar y pegar, sino un proceso de aprendizaje y mejora iterativa.
+
+---
+
 ## 🔍 Troubleshooting
 
 **Error de conexión a BigQuery:**
