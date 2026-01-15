@@ -26,7 +26,7 @@ Una plataforma de análisis en tiempo real para ventas de e-commerce con predicc
    BIGQUERY_DATASET=ecommerce_analytics
    BIGQUERY_SALES_TABLE=sales
    BIGQUERY_LOCATION=US
-   GCP_KEY_FILE=./secrets/project-e757136e-5b64-48d0-abf.json
+   GCP_KEY_FILE=./secrets/project-e757136e-5b64-48d0-abf-8e4e119a0c91.json
    ```
 
 
