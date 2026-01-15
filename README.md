@@ -28,6 +28,8 @@ Una plataforma de análisis en tiempo real para ventas de e-commerce con predicc
    BIGQUERY_LOCATION=US
    GCP_KEY_FILE=./secrets/project-e757136e-5b64-48d0-abf-8e4e119a0c91.json
    ```
+   
+   ⚠️ **IMPORTANTE**: En `GCP_KEY_FILE` debes especificar la ruta al archivo JSON de credenciales de Google Cloud que recibirás por correo. Coloca ese archivo en la carpeta `backend/secrets/` y asegúrate de que la ruta en la variable sea correcta.
 
 
 3. **Configurar variables de entorno - Frontend**
@@ -95,19 +97,28 @@ Los datos ingestionados en BigQuery corresponden al **período completo del año
 
 🔑 Configuración de Google Cloud (BigQuery)
 
-Para esta prueba técnica, se ha implementado una integración real con Google BigQuery. Se ha optado por el siguiente esquema para facilitar la evaluación sin comprometer la seguridad:
+Para esta prueba técnica, se ha implementado una integración real con Google BigQuery. 
 
-Seguridad: El archivo JSON de la llave de acceso no está incluido en el repositorio.
+**Aclaración sobre el enfoque de seguridad:**
 
-Acceso: He adjuntado el archivo de credenciales (google-key.json) en el correo de entrega.
+Soy completamente consciente de que en un entorno productivo, el enfoque actual **no sería la mejor práctica**. En producción, las credenciales de Google Cloud deberían:
+- Almacenarse en variables de entorno del servidor (no en archivos locales)
+- Gestionarse a través de un gestor de secretos (ej: HashiCorp Vault, AWS Secrets Manager, Google Secret Manager)
+- Nunca compartirse vía correo electrónico ni incluirse en el repositorio
 
-Configuración Instantánea:
+**Decisión para esta evaluación:**
 
-Descargue el archivo JSON adjunto del correo.
+Sin embargo, se implementó de esta manera específicamente para **facilitar la revisión de la prueba técnica**, permitiendo que puedas:
+- Ejecutar la aplicación inmediatamente sin configuraciones adicionales complejas
+- Evaluar la funcionalidad completa sin barreras técnicas
+- Enfocarte en la calidad del código, arquitectura y lógica de negocio
 
-Guárdelo directamente en la carpeta /backend/secrets/
+**Cómo configurarlo:**
 
-Asegúrese de que su archivo .env tenga la ruta correcta: GCP_KEY_FILE=./secrets/google-key.json.
+1. Descargue el archivo JSON de credenciales adjunto en el correo de entrega
+2. Guárdelo en la carpeta `/backend/secrets/`
+3. Asegúrese de que su archivo `.env` tenga la ruta correcta: `GCP_KEY_FILE=./secrets/google-key.json`
+4. En un proyecto real, recomendaría usar variables de entorno del servidor o un gestor de secretos
 
 
 
@@ -118,6 +129,11 @@ Asegúrese de que su archivo .env tenga la ruta correcta: GCP_KEY_FILE=./secrets
 - **Backend**: NestJS, TypeScript, BigQuery SDK
 - **Database**: Google BigQuery (Cloud SQL alternative)
 - **ML**: BigQuery ML (ARIMA_PLUS)
+
+### 🏗️ ¿Por qué NestJS para el Backend?
+
+Se eligió NestJS para el backend por su modularidad, que permite organizar funcionalidades en módulos independientes, y por su estructura clara (controllers, services, modules) que facilita mantenimiento y navegación del código.
+Al estar basado en TypeScript, ofrece tipado fuerte, autocompletado y detección de errores. Su inyección de dependencias permite componentes desacoplados y testables, y su soporte nativo de WebSocket facilita la comunicación en tiempo real. Además, cuenta con un ecosistema robusto para integración con servicios externos y herramientas de validación y middleware que mejoran la calidad del código.
 
 
 ## 🔍 Troubleshooting
