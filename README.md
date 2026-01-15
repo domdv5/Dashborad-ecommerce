@@ -86,6 +86,10 @@ Este tipo de particionamiento permite que, al ejecutar una consulta SQL filtrada
 
 Adicionalmente, se aplicó clustering por category y region, ya que estos campos son frecuentemente utilizados en agregaciones y filtros analíticos (por ejemplo, ventas por categoría). Esta combinación mejora la eficiencia de las consultas agregadas y es consistente con el tipo de dashboard analítico que consume la información desde el frontend.
 
+### Datos Disponibles
+
+Los datos ingestionados en BigQuery corresponden al **período completo del año 2023**. Al iniciar la aplicación, se mostrará el historial de ventas por categoría para la totalidad del año 2023. Es posible seleccionar un rango de tiempo diferente dentro del mismo año 2023 usando el selector de fechas disponible en el dashboard.
+
 
 ## 🔐 Nota Importante sobre Seguridad
 
